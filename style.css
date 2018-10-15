@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  background: #57e5ed
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.blob {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 150px;
+  animation: rotato 2s 0.2s linear infinite;
+  transform-origin: 49% 49%;
+  background: #fff;
+}
+
+.blob:before,
+.blob:after {
+  content: '';
+  background: #fff;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 150px;
+  opacity: 0.5;
+}
+
+.blob:before {
+  animation: rotato 4s 0.5s linear infinite;
+  transform-origin: 50% 52%;
+}
+
+.blob:after {
+  animation: rotato 3s linear infinite;
+  transform-origin: 48% 52%;
+}
+
+@keyframes rotato {
+  to {
+    transform: rotate(360deg);
+  }
+}
